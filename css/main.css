@@ -113,11 +113,26 @@ body .main-body {
 .main-body .body-about.image-left .right {
   width: 66%;
 }
+@media screen and (max-width: 600px) {
+  .main-body .body-about.image-left .left {
+    width: 100%;
+  }
+  .main-body .body-about.image-left .right {
+    width: 100%;
+  }
+  .main-body .body-about.image-right .left {
+    width: 100%;
+  }
+  .main-body .body-about.image-right .right {
+    width: 100%;
+  }
+}
 header {
   z-index: 1;
   border-bottom: 0.5rem solid #441d0e;
   position: relative;
   background-color: #fff5ce;
+  background-image: url('../images/wood-maple.jpg');
   overflow-y: hidden;
   box-shadow: 0 0 1rem #441d0e;
 }
@@ -128,11 +143,28 @@ header a {
   font-size: 7vw;
   color: #441d0e;
 }
+header .topper {
+  padding: 0.25rem;
+  padding-left: 0.5rem;
+  background-color: #b09e54;
+  height: 1.5rem;
+  border-bottom: 0.15rem solid #441d0e;
+}
+header .topper h3 {
+  font-size: 0.85rem;
+}
+header .topper .logo-words {
+  background-image: url('../images/logo-words.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  height: 100%;
+}
 header .item-container {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0.25rem;
+  top: 1.5rem;
   bottom: 0;
   margin: 0;
   padding: 0;
@@ -142,15 +174,14 @@ header .item-container .header-child {
   float: left;
   height: 100%;
   text-align: center;
-  padding-bottom: 1rem;
   /* top link hover animation */
 }
 header .item-container .header-child:first-child {
-  width: 45%;
+  width: 35%;
 }
 header .item-container .header-child.logo {
   height: 10%;
-  width: 20%;
+  width: 30%;
 }
 header .item-container .header-child:last-child {
   width: 35%;
@@ -183,38 +214,42 @@ header .item-container .header-child.active a {
 .social-popout {
   position: absolute;
   right: 0rem;
-  width: 35%;
-  bottom: -0.25rem;
+  width: 36%;
+  top: -1.5rem;
   text-align: center;
+  pointer-events: all;
   z-index: 1;
 }
 .social-popout > a {
   text-align: center;
   border: 0.25rem solid #441d0e;
-  border-radius: 1rem 1rem 0rem 0rem;
+  border-radius: 0rem 0rem 1rem 1rem;
   background-color: #fff5ce;
   display: inline-block;
   width: 25%;
-  vertical-align: bottom;
+  vertical-align: top;
   margin-right: 0.25rem;
   height: 3.5rem;
-  margin-bottom: -1.5rem;
   transition: all 0.3s;
   transition-timing-function: ease-out;
   cursor: pointer;
 }
 .social-popout > a:hover {
-  margin-bottom: 0;
+  margin-top: 1rem;
   transition: all 0.15s;
   transition-timing-function: ease-in-out;
   background-color: #3e77a3;
+}
+.social-popout > a:hover .si {
+  height: 2rem;
+  margin-top: 0.75rem;
 }
 .social-popout .si {
   background-repeat: no-repeat;
   background-position: top;
   background-size: contain;
-  height: 2rem;
-  margin-top: 0.5rem;
+  height: 1rem;
+  margin-top: 1.5rem;
 }
 .social-popout .si-facebook {
   background-image: url('../images/social-f-blue.png');
@@ -240,31 +275,30 @@ header .item-container .header-child.active a {
   left: 0;
   width: 100%;
   height: 15%;
-  z-index: 1;
   pointer-events: none;
-}
-.overlay-header .topper {
-  padding: 0.1rem;
-  background-color: #b09e54;
-  border-bottom: 0.15rem solid #441d0e;
-}
-.overlay-header .topper h3 {
-  font-size: 0.85rem;
+  z-index: 1;
 }
 .overlay-header .logo-container {
   position: absolute;
-  width: 40%;
+  width: 100%;
   height: 100%;
-  left: 35%;
   text-align: center;
+  pointer-events: none;
 }
 .overlay-header .logo-container > p {
   position: absolute;
 }
 .overlay-header .logo-container .logo {
-  height: 90%;
-  background-image: url('../images/pig.png');
+  margin-top: 0.5rem;
+  height: 100%;
+  background-image: url('../images/logo-main.png');
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;
+}
+@media screen and (max-width: 600px) {
+  .overlay-header .logo-container .logo {
+    height: 65%;
+    margin-top: 2rem;
+  }
 }
