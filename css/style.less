@@ -11,195 +11,12 @@ body{
 
   header{
     height:15%;
-    overflow-y:hidden;
-
-    box-shadow:0 0 1rem @color-brown-dark;
   }
 
   .main-body{
     height:85%;
     margin-bottom:5rem;
   }
-}
-
-.social-popout{
-  position: absolute;
-  right: 1rem;
-  bottom: -.25rem;
-
-  >a{
-    text-align:center;
-
-    border: .25rem solid @color-brown-dark;
-    border-radius: 1rem 1rem 0rem 0rem;
-    background-color:@color-white;
-
-    display:inline-block;
-    width:32%;
-
-    vertical-align:bottom;
-
-    // float:right;
-    margin-right:.5rem;
-    width:4rem;
-
-    height:3.5rem;
-    margin-bottom:-1.5rem;
-
-    transition: all .30s;
-      transition-timing-function: ease-out;
-
-    cursor:pointer;
-
-    &:hover{
-      margin-bottom:0;
-      transition: all .15s;
-      transition-timing-function: ease-in-out;
-      background-color:@color-blue-light;
-    }
-  }
-
-  .si{
-    background-repeat:no-repeat;
-    background-position:top;
-    background-size:contain;
-
-    height:2rem;
-    margin-top:.5rem;
-
-    &:hover{
-      // height:2.5rem;
-    }
-  }
-
-  .si-facebook{
-    background-image:url('../images/social-f-blue.png');
-
-  }
-  .si-instagram{
-    background-image:url('../images/social-i-blue.png');
-
-  }
-  .si-email{
-    background-image:url('../images/social-e-blue.png');
-
-  }
-
-  >a:hover{
-    .si-facebook{
-      background-image:url('../images/social-f-white.png');
-    }
-    .si-instagram{
-      background-image:url('../images/social-i-white.png');
-    }
-    .si-email{
-      background-image:url('../images/social-e-white.png');
-    }
-  }
-
-  z-index:1;
-}
-
-header{
-  z-index:1;
-  border-bottom: 10px solid @color-brown-dark;
-  position:relative;
-  // margin-top:10px;
-
-  a{
-    display:block;
-    text-decoration:none;
-
-    font-family: @fontfamily-luckyguy;
-    // font-size: 38px;
-    font-size: 7vw;
-    color:@color-brown-dark;
-  }
-
-  .item-container{
-    position:absolute;
-    left:0;
-    right:0;
-    top:.25rem;
-    bottom:0;
-    margin:0;
-    padding:0;
-
-    .header-child{
-      display:table;
-      float:left;
-      height:100%;
-      text-align:center;
-      padding-bottom:1rem;
-
-      &:first-child{
-        width:45%;
-      }
-
-      &.logo{
-        height:110%;
-        width:20%;
-        padding-bottom:0;
-
-        >div{
-          background-image:url('../images/pig.png');
-          background-repeat:no-repeat;
-          background-position:bottom;
-          background-size:contain;
-        }
-      }
-
-      &:last-child{
-        width:35%;
-
-      }
-
-      >*{
-        display:table-cell;
-        vertical-align:middle;
-      }
-
-
-      /* top link hover animation */
-      a{
-        transition: all .25s;
-        &:hover{
-          // color:@color-green-light;
-          color:@color-white;
-          -webkit-text-stroke: 1px @color-brown-dark;
-          paint-order:stroke-fill;
-          text-shadow:
-            3px 3px 0 @color-brown-dark,
-            -1px -1px 0 @color-brown-dark,  
-            1px -1px 0 @color-brown-dark,
-            -1px 1px 0 @color-brown-dark,
-            1px 1px 0 @color-brown-dark;
-
-          transition: all .25s;
-        }
-      }
-
-      &.active{
-        a{
-          color:@color-yellow;
-
-          -webkit-text-stroke: 1px @color-brown-dark;
-          paint-order:stroke-fill;
-          text-shadow:
-            3px 3px 0 @color-brown-dark,
-            -1px -1px 0 @color-brown-dark,  
-            1px -1px 0 @color-brown-dark,
-            -1px 1px 0 @color-brown-dark,
-            1px 1px 0 @color-brown-dark;
-        }
-      }
-    }
-  }
-
-}
-
-footer{
-
 }
 
 .main-body{
@@ -229,7 +46,7 @@ footer{
   }
 
   .body-gallery{
-    
+
   }
 
 
@@ -241,6 +58,8 @@ footer{
     }
 
     img{
+      width:auto;
+      height:auto;
       max-width:100%;
       max-height:400px;
 
@@ -256,12 +75,21 @@ footer{
       }
 
       .right{
+        text-align:center;
         width:33%;
       }
     }
 
     &.image-left{
+
+      img{
+        max-width:220px;
+        max-height:220px;
+        width:100%;
+      }
+
       .left{
+        text-align:center;
         width:33%;
       }
 
@@ -276,9 +104,4 @@ footer{
 
 
 @media screen and (min-width: 801px){
-  header{
-    a{
-      font-size:60px;
-    }
-  }
 }

@@ -55,17 +55,137 @@ body {
 }
 body header {
   height: 15%;
-  overflow-y: hidden;
-  box-shadow: 0 0 1rem #441d0e;
 }
 body .main-body {
   height: 85%;
   margin-bottom: 5rem;
 }
+.main-body {
+  overflow-y: auto;
+  padding: 0rem 2rem;
+}
+.main-body > section {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff5ce;
+  border: 0.5rem solid #441d0e;
+  border-radius: 2rem;
+  box-shadow: 0 8px 6px -6px black;
+}
+.main-body > section:last-child {
+  margin-bottom: 3rem;
+}
+.main-body .divider {
+  margin: 1rem 0rem;
+  height: 0.25rem;
+  background-color: #c25c34;
+}
+.main-body .body-about > div {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1rem;
+}
+.main-body .body-about img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 400px;
+}
+.main-body .body-about img.with-shadow {
+  box-shadow: 0 8px 6px -6px black;
+}
+.main-body .body-about.image-right .left {
+  width: 66%;
+}
+.main-body .body-about.image-right .right {
+  text-align: center;
+  width: 33%;
+}
+.main-body .body-about.image-left img {
+  max-width: 220px;
+  max-height: 220px;
+  width: 100%;
+}
+.main-body .body-about.image-left .left {
+  text-align: center;
+  width: 33%;
+}
+.main-body .body-about.image-left .right {
+  width: 66%;
+}
+header {
+  z-index: 1;
+  border-bottom: 0.5rem solid #441d0e;
+  position: relative;
+  background-color: #fff5ce;
+  overflow-y: hidden;
+  box-shadow: 0 0 1rem #441d0e;
+}
+header a {
+  display: block;
+  text-decoration: none;
+  font-family: "Luckiest Guy", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 7vw;
+  color: #441d0e;
+}
+header .item-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0.25rem;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+header .item-container .header-child {
+  display: table;
+  float: left;
+  height: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
+  /* top link hover animation */
+}
+header .item-container .header-child:first-child {
+  width: 45%;
+}
+header .item-container .header-child.logo {
+  height: 10%;
+  width: 20%;
+}
+header .item-container .header-child:last-child {
+  width: 35%;
+}
+header .item-container .header-child > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+header .item-container .header-child a {
+  transition: all 0.25s;
+}
+header .item-container .header-child a:hover {
+  color: #fde792;
+  -webkit-text-stroke: 1px #441d0e;
+  paint-order: stroke-fill;
+  text-shadow: 3px 3px 0 #441d0e, -1px -1px 0 #441d0e, 1px -1px 0 #441d0e, -1px 1px 0 #441d0e, 1px 1px 0 #441d0e;
+  transition: all 0.25s;
+}
+header .item-container .header-child.active a {
+  color: #fde792;
+  -webkit-text-stroke: 1px #441d0e;
+  paint-order: stroke-fill;
+  text-shadow: 3px 3px 0 #441d0e, -1px -1px 0 #441d0e, 1px -1px 0 #441d0e, -1px 1px 0 #441d0e, 1px 1px 0 #441d0e;
+}
+@media screen and (min-width: 801px) {
+  header a {
+    font-size: 60px;
+  }
+}
 .social-popout {
   position: absolute;
-  right: 1rem;
+  right: 0rem;
+  width: 35%;
   bottom: -0.25rem;
+  text-align: center;
   z-index: 1;
 }
 .social-popout > a {
@@ -74,10 +194,9 @@ body .main-body {
   border-radius: 1rem 1rem 0rem 0rem;
   background-color: #fff5ce;
   display: inline-block;
-  width: 32%;
+  width: 25%;
   vertical-align: bottom;
-  margin-right: 0.5rem;
-  width: 4rem;
+  margin-right: 0.25rem;
   height: 3.5rem;
   margin-bottom: -1.5rem;
   transition: all 0.3s;
@@ -115,118 +234,37 @@ body .main-body {
 .social-popout > a:hover .si-email {
   background-image: url('../images/social-e-white.png');
 }
-header {
-  z-index: 1;
-  border-bottom: 10px solid #441d0e;
-  position: relative;
-}
-header a {
-  display: block;
-  text-decoration: none;
-  font-family: "Luckiest Guy", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 7vw;
-  color: #441d0e;
-}
-header .item-container {
+.overlay-header {
   position: absolute;
+  top: 0;
   left: 0;
-  right: 0;
-  top: 0.25rem;
-  bottom: 0;
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  height: 15%;
+  z-index: 1;
+  pointer-events: none;
 }
-header .item-container .header-child {
-  display: table;
-  float: left;
+.overlay-header .topper {
+  padding: 0.1rem;
+  background-color: #b09e54;
+  border-bottom: 0.15rem solid #441d0e;
+}
+.overlay-header .topper h3 {
+  font-size: 0.85rem;
+}
+.overlay-header .logo-container {
+  position: absolute;
+  width: 40%;
   height: 100%;
+  left: 35%;
   text-align: center;
-  padding-bottom: 1rem;
-  /* top link hover animation */
 }
-header .item-container .header-child:first-child {
-  width: 45%;
+.overlay-header .logo-container > p {
+  position: absolute;
 }
-header .item-container .header-child.logo {
-  height: 110%;
-  width: 20%;
-  padding-bottom: 0;
-}
-header .item-container .header-child.logo > div {
+.overlay-header .logo-container .logo {
+  height: 90%;
   background-image: url('../images/pig.png');
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;
-}
-header .item-container .header-child:last-child {
-  width: 35%;
-}
-header .item-container .header-child > * {
-  display: table-cell;
-  vertical-align: middle;
-}
-header .item-container .header-child a {
-  transition: all 0.25s;
-}
-header .item-container .header-child a:hover {
-  color: #fff5ce;
-  -webkit-text-stroke: 1px #441d0e;
-  paint-order: stroke-fill;
-  text-shadow: 3px 3px 0 #441d0e, -1px -1px 0 #441d0e, 1px -1px 0 #441d0e, -1px 1px 0 #441d0e, 1px 1px 0 #441d0e;
-  transition: all 0.25s;
-}
-header .item-container .header-child.active a {
-  color: #fde792;
-  -webkit-text-stroke: 1px #441d0e;
-  paint-order: stroke-fill;
-  text-shadow: 3px 3px 0 #441d0e, -1px -1px 0 #441d0e, 1px -1px 0 #441d0e, -1px 1px 0 #441d0e, 1px 1px 0 #441d0e;
-}
-.main-body {
-  overflow-y: auto;
-  padding: 0rem 2rem;
-}
-.main-body > section {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: #fff5ce;
-  border: 0.5rem solid #441d0e;
-  border-radius: 2rem;
-  box-shadow: 0 8px 6px -6px black;
-}
-.main-body > section:last-child {
-  margin-bottom: 3rem;
-}
-.main-body .divider {
-  margin: 1rem 0rem;
-  height: 0.25rem;
-  background-color: #c25c34;
-}
-.main-body .body-about > div {
-  display: inline-block;
-  vertical-align: top;
-  padding: 1rem;
-}
-.main-body .body-about img {
-  max-width: 100%;
-  max-height: 400px;
-}
-.main-body .body-about img.with-shadow {
-  box-shadow: 0 8px 6px -6px black;
-}
-.main-body .body-about.image-right .left {
-  width: 66%;
-}
-.main-body .body-about.image-right .right {
-  width: 33%;
-}
-.main-body .body-about.image-left .left {
-  width: 33%;
-}
-.main-body .body-about.image-left .right {
-  width: 66%;
-}
-@media screen and (min-width: 801px) {
-  header a {
-    font-size: 60px;
-  }
 }
