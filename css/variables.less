@@ -1,0 +1,51 @@
+
+/* A file for defining reusable variables, should stay very simple, sticking to rule specific, and not element specific things */
+@color-brown-dark: #441d0e;
+@color-brown-light: #c25c34;
+@color-tan: #b09e54;
+@color-white: #fde792;
+@color-green-dark: #3b631f;
+@color-green-light: #477725;
+@color-blue-dark: #264863;
+@color-blue-light: #3e77a3;
+
+
+/* assign stuff other than colors as well */
+@shadow-z1: 2px 2px 5px @color-brown-dark;
+
+
+@import url("http://fonts.googleapis.com/css?family=Luckiest+Guy|Open+Sans|Patua+One");
+@fontfamily-opensans: "Open Sans", Arial, sans-serif;
+@fontfamily-luckyguy: "Luckiest Guy", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@fontfamily-patuaone: "Patua One", cursive;
+
+
+body{
+  font-family: @fontfamily-opensans;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+h1,h2,h3,h4{
+  // color:@color-blue-dark;
+  color: @color-brown-dark;
+  font-family: @fontfamily-patuaone;
+
+  margin:0;
+}
+
+p{
+  margin:0;
+}
+
+h1{
+  font-size:2rem;
+}
+h2{
+  font-size:1.5rem;
+}
+h3{
+  font-size:1rem;
+}
