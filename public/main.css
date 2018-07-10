@@ -95,6 +95,9 @@ body .main-body {
   height: 0.25rem;
   background-color: #c25c34;
 }
+.main-body .body-gallery {
+  margin-top: 2rem;
+}
 .main-body .body-about > div {
   display: inline-block;
   vertical-align: top;
