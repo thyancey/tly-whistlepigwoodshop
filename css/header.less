@@ -1,7 +1,7 @@
 
 header{
   z-index:1;
-  border-bottom: .5rem solid @color-brown-dark;
+  border-bottom: .3rem solid @color-brown-dark;
   position:relative;
   background-color:@color-white;
 
@@ -22,7 +22,7 @@ header{
     padding:.25rem;
     padding-left:.5rem;
     background-color:@color-tan;
-    height:1.5rem;
+    height:@header-topper-height;
     border-bottom: .15rem solid @color-brown-dark;
     h3{
       font-size:.85rem;
@@ -43,7 +43,7 @@ header{
     position:absolute;
     left:0;
     right:0;
-    top:1.5rem;
+    top:@header-topper-height;
     bottom:0;
     margin:0;
     padding:0;
@@ -128,7 +128,7 @@ header{
   right: 0rem;
   width: 36%;
   // left:32%;
-  top: -1.5rem;
+  top: -@header-topper-height;
   text-align:center;
   pointer-events:all;
 
@@ -171,7 +171,7 @@ header{
     background-size:contain;
 
     height:1rem;
-    margin-top:1.5rem;
+    margin-top:@header-topper-height;
   }
 
   .si-facebook{
@@ -215,8 +215,9 @@ header{
 
   .logo-container{
     position:absolute;
+    top:@header-topper-height;
     width:100%;
-    height:100%;
+    height:~"calc(100% - "@header-topper-height~")";
     // left:35%;
     text-align:center;
     pointer-events: none;
@@ -226,8 +227,8 @@ header{
     }
 
     .logo{
-      margin-top:.5rem;
-      height:100%;
+      margin-top:-1rem;
+      height:136%;
       background-image:url('../images/logo-main.png');
       background-repeat:no-repeat;
       background-position:bottom;
@@ -242,8 +243,8 @@ header{
   .overlay-header{
     .logo-container{
       .logo{
-        height:65%;
-        margin-top:2rem;
+        margin-top:0rem;
+        height:100%;
       }
     }
   }
